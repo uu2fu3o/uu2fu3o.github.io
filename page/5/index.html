@@ -396,22 +396,21 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/upload-insecure-files/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-wen-jian-bao-han-lou-dong-li-yong-phpinfo/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="PHP文件包含漏洞（利用phpinfo）">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">PHP文件包含漏洞（利用phpinfo）</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Upload Insecure Files默认扩展当页面存在文件上传时，通常会在前端或后端限制我们上传文件的后缀，当存在过滤不严格的情况，我们可以使用默认扩展的后缀，直接达到我们的目的
-PHP server
-1234567891011121
+                                漏洞简介:PHP文件包含漏洞中，如果找不到可以包含的文件，我们可以通过包含临时文件的方法来getshell。因为临时文件名是随机的，如果目标网站上存在phpinfo，则可以通过phpinfo来获取临时文件名，进而进行包含。
+漏洞利用:直接使
                             
                         </div>
                         <div class="publish-info">
@@ -420,8 +419,20 @@ PHP server
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -435,26 +446,24 @@ PHP server
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/sql/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-xxe/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="php-xxe">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">php-xxe</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                SQL注入注入点检测常见注入点：
+                                漏洞复现：进入靶场
+1docker compose up -d
 
-GET&#x2F;POST&#x2F;PUT&#x2F;DELETE参数
-X-Forwarded-For
-文件名
-
-有回显注入字符(数字)型注入数字型和字符型最大的差别在于查询语句是否使用引号进行包裹，但
+访问8080端口即可看到phpinfo界面，搜索libxml即可看到版本号为2.8.0，存在外部实体加载漏洞，访问漏洞存在的页面添加payload
+1234567&lt;?x
                             
                         </div>
                         <div class="publish-info">
@@ -463,8 +472,20 @@ X-Forwarded-For
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -478,24 +499,21 @@ X-Forwarded-For
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/redis-wei-shou-quan-lou-dong/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/tomcat/cve-2017-12615/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="CVE-2017-12615">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">CVE-2017-12615</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                原理
-漏洞利用
-1234攻击机kali  192.168.121.135目标机ubuntu 192.168.121.138
-
-redis常用命令1234567891011121314set testkey &quot;Hello World
+                                CVE-2017-12615漏洞影响版本：Apache Tomcat 7.0.0 - 7.0.79（windows）
+漏洞原理：当 Tomcat 运行在 Windows 主机上，且启用了 HTTP PUT 请求方法（例如，将 readonl
                             
                         </div>
                         <div class="publish-info">
@@ -504,8 +522,20 @@ redis常用命令1234567891011121314set testkey &quot;Hello World
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Tomcat/" class="post-category">
+                                    Tomcat
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -519,20 +549,23 @@ redis常用命令1234567891011121314set testkey &quot;Hello World
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/jwt/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/tomcat/7-ruo-kou-ling-hou-tai-getshell/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="7+弱口令后台getshell">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">7+弱口令后台getshell</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                什么是jwtjwt全名json web token,用于创建具有可选签名和&#x2F;或可选加密的数据，其有效负载包含断言一些声明的JSON . 使用私人秘密或公钥&#x2F;私钥对令牌进行签名。其效果类似于我们常用的cookie,但是相较
+                                Tomcat7+ 弱口令 &amp;&amp; 后台getshell漏洞漏洞影响版本：
+apache tomcat 7+
+漏洞产生原因：
+Tomcat支持在后台部署war文件，可以直接将webshell部署到web目录下。其中，欲访问后台，
                             
                         </div>
                         <div class="publish-info">
@@ -541,8 +574,20 @@ redis常用命令1234567891011121314set testkey &quot;Hello World
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Tomcat/" class="post-category">
+                                    Tomcat
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -556,21 +601,21 @@ redis常用命令1234567891011121314set testkey &quot;Hello World
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/csrf/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/tomcat/cve-2020-1938/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="CVE-2020-1938">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">CVE-2020-1938</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Cross-site request forgery前言在XSS学习中，已经简单介绍过CSRF的原理以及简单利用，本篇主要讲述如何检测和防御CSRF攻击
-CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
+                                CVE-2020-1938漏洞描述：
+由于 Tomcat AJP 协议设计上存在缺陷，攻击者通过 Tomcat AJP Connector 可以读取或包含 Tomcat 上所有 webapp 目录下的任意文件，例如可以读取 webapp 配
                             
                         </div>
                         <div class="publish-info">
@@ -579,8 +624,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Tomcat/" class="post-category">
+                                    Tomcat
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -594,23 +651,22 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/duan-kou-zhuan-fa-yu-dai-li/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/shiro/cve-2010-3863/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="CVE-2010-3863">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">CVE-2010-3863</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                端口转发和代理正向shell与反向shell正向连接
-受控主机监听一个端口，由控制端主机主动连接获取shell称为正向连接，适用于受控主机具有一个公网ip的情况
-反向连接
-控制端监听一个端口，受控主机反向连接控制端获取shell成为反向连接
+                                漏洞简介 Shiro 在对请求路径与 shiro.ini 配置文件配置的 AntPath 进行对比前 未进行路径标准化，导致使用时可能绕过权限校验
+漏洞复现影响版本:&lt;1.1.0和JSecurity 0.9.x
+直接访问admin界面
                             
                         </div>
                         <div class="publish-info">
@@ -619,8 +675,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/shiro/" class="post-category">
+                                    shiro
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -634,23 +702,22 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/nei-wang-shen-tou-ji-chu-zhi-shi/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/shiro/cve-2016-4437/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="CVE-2016-4437">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">CVE-2016-4437</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                内网工作环境工作组(work group)工作组作为资源管理模式的一种，用于对计算机行使功能进行划分，每个工作组中有若干计算机。
-注意:
-1.将计算机加入工作组中时，若指定的工作组不存在，则会创建一个新的工作组
-2.在默认情况下，局域网内的
+                                漏洞复现https://github.com/feihong-cs/ShiroExploit-Deprecated/releases/tag/v2.51
+使用图形化工具能够很方便的检测和利用漏洞，该工具要求java环境为jdk1.8
+或者是
                             
                         </div>
                         <div class="publish-info">
@@ -659,8 +726,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/shiro/" class="post-category">
+                                    shiro
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -674,20 +753,21 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/nei-wang-heng-xiang-yi-dong/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/shiro/cve-2020-1957/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="CVE-2020-1957">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">CVE-2020-1957</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                内网横向横向移动中的文件传输利用IPC$进行网络共享IPC$(Internet Process Connection)是共享”命名管道”的资源，它是为了让进程间通信而开放的命名管道，也就是两个进程之间可以利用它产生数据交互，可以通过验证用户
+                                漏洞成因Apache Shiro 1.5.2之前版本中存在安全漏洞。攻击者可借助特制的请求利用该漏洞绕过身份验证。
+Shiro框架通过拦截器功能来对用户访问权限进行控制，如anon, authc等拦截器。anon为匿名拦截器，不需要登录即可
                             
                         </div>
                         <div class="publish-info">
@@ -696,8 +776,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                                
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/shiro/" class="post-category">
+                                    shiro
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -711,23 +803,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/nei-wang-xin-xi-shou-ji/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/ti-quan/zang-niu-ti-quan-fu-xian/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="脏牛提权复现">
                             
-                            <span class="card-title"></span>
+                            <span class="card-title">脏牛提权复现</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                本机信息收集手动信息收集本机信息包括操作系统、权限、内网IP地址段、杀毒软件、端口、服务、补丁更新频率、网络连接、共享、会话等。
-如果是域内主机，操作系统，应用软件，补丁、服务、杀毒软件一般都是批量安装的。
-1.查询网络配置信息
-1ipco
+                                漏洞介绍漏洞具体是由于get_user_page内核函数在处理Copy-on-Write的过程中，可能产出竞态条件造成COW过程被破坏，导致出现写数据到进程地址空间内只读内存区域的机会。修改su或者passwd程序就可以达到root的目的。
                             
                         </div>
                         <div class="publish-info">
@@ -736,126 +825,20 @@ CSRF检测http referer通过检测数据包中的referer字段判断是否有CS
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/windows-quan-xian-ti-sheng/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                windows权限基础知识windows本机用户权限划分
-User：普通用户权限，系统中最安全的权限，分配给该组的默认权限不允许成员修改操作系统的设置或用户资料
-Administrator：管理员权限，可以利用 Windows 的机制将自己
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-03
-                            </span>
-                            <span class="publish-author">
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
                                 
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/nei-wang-ti-xi-jian-she/potato-jia-zu-ti-quan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Potato家族提权总结potota家族提权，本质是通过操纵访问令牌，将账户服务提权到SYSTEM权限
-利用 Potato 提权（除开 Hot Potato）的是前提是拥有 SeImpersonatePrivilege 或 SeAssign
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-03
-                            </span>
-                            <span class="publish-author">
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/%E6%8F%90%E6%9D%83/" class="post-category">
+                                    提权
+                                </a>
                                 
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/brup-labs/upload-files/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                            
-                            <span class="card-title"></span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Remote code execution via web shell upload可以直接上传php文件，上传位置位于头像
-1GET /files/avatars/exp.php HTTP/2
-
-注意文件路径即可
-Content-Type
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                uu2fu3o
                                 
                             </span>
                         </div>
@@ -883,12 +866,11 @@ Content-Type
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">5 / 6</div>
+            <div class="center-align b-text-gray">5 / 5</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a href="/page/6/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
+            <a class="right btn-floating btn-large disabled">
                 <i class="fas fa-angle-right"></i>
             </a>
             

