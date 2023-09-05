@@ -415,7 +415,7 @@
                 <h2 id="本机信息收集"><a href="#本机信息收集" class="headerlink" title="本机信息收集"></a>本机信息收集</h2><h3 id="手动信息收集"><a href="#手动信息收集" class="headerlink" title="手动信息收集"></a>手动信息收集</h3><p>本机信息包括操作系统、权限、内网IP地址段、杀毒软件、端口、服务、补丁更新频率、网络连接、共享、会话等。</p>
 <p>如果是域内主机，操作系统，应用软件，补丁、服务、杀毒软件一般都是批量安装的。</p>
 <p>1.查询网络配置信息</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig/all</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /all</span><br></pre></td></tr></table></figure>
 
 <p>2.查询操作系统,软件,补丁信息</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systeminfo</span><br><span class="line">wmic qfe get Caption ,Description ,HotFixID,InstalledOn</span><br><span class="line">systeminfo | findstr /B /C&quot;OS 名称 &quot; OS版本”</span><br><span class="line">systeminfo | findstr /B /C&quot;OS Name &quot; OS·版本”</span><br></pre></td></tr></table></figure>
