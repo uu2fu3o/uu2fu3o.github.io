@@ -396,23 +396,20 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/brup-labs/ssrf/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/liu-liang-fen-xi/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Ssrf">
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="流量分析">
                             
-                            <span class="card-title">Ssrf</span>
+                            <span class="card-title">流量分析</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Basic SSRF against the local server基础的ssrf，在数量查询位置找到调用的url，修改为
-1http://localhost/admin
-
-成功读取的admin页面，在页面源代码中可以找到删除用户调用的a
+                                TCP与UDP详解123456789101112TCP的三次握手TCP连接客户					服务器	---&gt;SYN=1,seq=x	&lt;---SYN=1,ACK=1,seq=y,ack=x+1	---&gt;ACK=1,seq=x+1
                             
                         </div>
                         <div class="publish-info">
@@ -427,8 +424,8 @@
                                     渗透测试
                                 </a>
                                 
-                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/brup-labs/" class="post-category">
-                                    brup labs
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E5%A4%96%E7%BD%91%E6%BC%8F%E6%B4%9E/" class="post-category">
+                                    外网漏洞
                                 </a>
                                 
                                 
@@ -444,24 +441,21 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/brup-labs/upload-files/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/wai-wang-lou-dong/liu-lan-qi-an-quan/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="upload files">
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="浏览器安全">
                             
-                            <span class="card-title">upload files</span>
+                            <span class="card-title">浏览器安全</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Remote code execution via web shell upload可以直接上传php文件，上传位置位于头像
-1GET /files/avatars/exp.php HTTP/2
-
-注意文件路径即可
-Content-Type
+                                1.浏览器安全1.1 同源策略（Same-origin policy）维基百科上的解释为：
+是指在Web浏览器中，允许某个网页脚本访问另一个网页的数据，但前提是这两个网页必须有相同的URI、主机名和端口号，一旦两个网站满足上述条件，这两个网
                             
                         </div>
                         <div class="publish-info">
@@ -476,8 +470,8 @@ Content-Type
                                     渗透测试
                                 </a>
                                 
-                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/brup-labs/" class="post-category">
-                                    brup labs
+                                <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/%E5%A4%96%E7%BD%91%E6%BC%8F%E6%B4%9E/" class="post-category">
+                                    外网漏洞
                                 </a>
                                 
                                 
@@ -843,23 +837,25 @@ nmap先扫描一下端口
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/ba-ji-lian-xi/dc8/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/ba-ji-lian-xi/dc9/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="DC8">
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="DC9">
                             
-                            <span class="card-title">DC8</span>
+                            <span class="card-title">DC9</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                123arp-scan -l ==&gt;192.168.121.152
+                                123arp-scan -l==&gt;192.168.121.153
 
-打开页面，该站点同样是由Drupal搭建的，与前两次不同的是，这次页面时一个报警信息，大致内容如下
-1在接下来的几周中，由于我们需要解决一些未解决的问题，本网站可能
+
+nmap扫描端口，用工具扫描目录
+
+基本都是能在首页看到的页面，不过在display.php中给出了很多用户的信息，尝试从这方面入手，尝试无果后，在serach.p
                             
                         </div>
                         <div class="publish-info">
@@ -891,25 +887,23 @@ nmap先扫描一下端口
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/09/03/shen-tou-ce-shi/ba-ji-lian-xi/dc9/">
+                    <a href="/2023/09/03/shen-tou-ce-shi/ba-ji-lian-xi/dc8/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="DC9">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="DC8">
                             
-                            <span class="card-title">DC9</span>
+                            <span class="card-title">DC8</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                123arp-scan -l==&gt;192.168.121.153
+                                123arp-scan -l ==&gt;192.168.121.152
 
-
-nmap扫描端口，用工具扫描目录
-
-基本都是能在首页看到的页面，不过在display.php中给出了很多用户的信息，尝试从这方面入手，尝试无果后，在serach.p
+打开页面，该站点同样是由Drupal搭建的，与前两次不同的是，这次页面时一个报警信息，大致内容如下
+1在接下来的几周中，由于我们需要解决一些未解决的问题，本网站可能
                             
                         </div>
                         <div class="publish-info">
